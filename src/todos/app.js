@@ -2,7 +2,7 @@ import html from './app.html?raw'
 
 /**
  * 
- * @param {String} elementId 
+ * @param {String} elementId id del elemntHTML al que agregar  
  */
 export const app = (elementId) => {
 
@@ -12,7 +12,5 @@ export const app = (elementId) => {
         document.querySelector(elementId).append(app);
 
     })()
-
-
 
 }
