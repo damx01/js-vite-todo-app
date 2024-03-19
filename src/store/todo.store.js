@@ -26,6 +26,61 @@ const initStore = () => {
 
 }
 
+const loadStore = () => {
+    throw new Error("No Implementado")
+}
+
+/**
+ * 
+ * @param {String} description Descripción de la tarea
+ */
+const addTodo = (description) => {
+    throw new Error("No Implementado")
+}
+
+/**
+ * 
+ * @param {String} todoId 
+ */
+const toggleTodo = (todoId) => {
+    throw new Error("No Implementado")
+}
+
+/**
+ * 
+ * @param {String} todoId 
+ */
+const deleteTodo = (todoId) => {
+    throw new Error("No Implementado")
+}
+
+const deleteCompleted = () => {
+    throw new Error("No Implementado")
+}
+
+
+/**
+ * 
+ * @param {Array} newFilter 
+ */
+const setFilter = (newFilter = Filters.All) => {
+    throw new Error("No Implementado")
+}
+
+
+const getCurrentFilter = () => {
+    throw new Error("No Implementado")
+}
+
+
+
 export default {
+    addTodo,
+    deleteCompleted,
+    deleteTodo,
+    getCurrentFilter,
     initStore,
+    loadStore,
+    setFilter,
+    toggleTodo,
 }
