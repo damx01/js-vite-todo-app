@@ -11,9 +11,12 @@ const Filters = {
 
 const state = {
     todos: [
+        new Todo('Piedra del Mente'),
         new Todo('Piedra del alma'),
-        new Todo('Piedra del infinito'),
-        new Todo('Piedra del tiempo')
+        new Todo('Piedra del Poder'),
+        new Todo('Piedra del Espacio'),
+        new Todo('Piedra del tiempo'),
+        new Todo('Piedra del Realidad'),
     ],
     filter: Filters.All
 }
@@ -56,7 +59,21 @@ const addTodo = (description) => {
 }
 
 const toggleTodo = (todoId) => {
-    throw new Error("No Implementado")
+
+
+    state.todos = state.todos.map((todo) => {
+
+        if (todo.id === todoId) {
+            todo.done = !todo.done
+        }
+        return todo;
+    })
+
+
+
+
+
+
 }
 
 const deleteTodo = (todoId) => {
@@ -71,13 +88,12 @@ const deleteCompleted = () => {
 }
 
 const setFilter = (newFilter = Filters.All) => {
-
     state.filter = newFilter;
-
-    throw new Error("No Implementado")
 }
 
 const getCurrentFilter = () => {
+
+    return state.filter
     throw new Error("No Implementado")
 }
 
