@@ -6,4 +6,4 @@ import initStore from "./src/store/todo.store"
 
 initStore.initStore()
 
-app('#app')
+app('#app')//manda el id del div que esta en index.html
