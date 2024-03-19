@@ -30,49 +30,56 @@ const loadStore = () => {
     throw new Error("No Implementado")
 }
 
-/**
- * 
- * @param {String} description Descripción de la tarea
- */
-const addTodo = (description) => {
-    throw new Error("No Implementado")
+const getTodos = (filter = Filters.All) => {
+
+    switch (filter) {
+
+        case Filters.All:
+            return [...state.todos];
+
+        case Filters.Completed:
+            return state.todos.filter(todo => todo.done);
+
+        case Filters.Pending:
+            return state.todos.filter(todo => !todo.done);
+        default:
+            throw new Error(`Opción ${filter} no es valida.`);
+    }
 }
 
-/**
- * 
- * @param {String} todoId 
- */
+const addTodo = (description) => {
+
+    if (!description) throw new Error("La Descripcion es obligatoria.");
+
+    state.todos.push(new Todo(description))
+
+}
+
 const toggleTodo = (todoId) => {
     throw new Error("No Implementado")
 }
 
-/**
- * 
- * @param {String} todoId 
- */
 const deleteTodo = (todoId) => {
-    throw new Error("No Implementado")
+
+    if (!todoId) throw new Error("Es necesario el Id")
+
+    state.todos = state.todos.filter(todo => todo.id !== todoId);
 }
 
 const deleteCompleted = () => {
-    throw new Error("No Implementado")
+    state.todos = state.todos.filter(todo => !todo.done)
 }
 
-
-/**
- * 
- * @param {Array} newFilter 
- */
 const setFilter = (newFilter = Filters.All) => {
+
+    state.filter = newFilter;
+
     throw new Error("No Implementado")
 }
-
 
 const getCurrentFilter = () => {
     throw new Error("No Implementado")
 }
-
-
 
 export default {
     addTodo,
@@ -83,4 +90,5 @@ export default {
     loadStore,
     setFilter,
     toggleTodo,
+    getTodos,
 }
