@@ -60,7 +60,6 @@ const addTodo = (description) => {
 
 const toggleTodo = (todoId) => {
 
-
     state.todos = state.todos.map((todo) => {
 
         if (todo.id === todoId) {
@@ -68,11 +67,6 @@ const toggleTodo = (todoId) => {
         }
         return todo;
     })
-
-
-
-
-
 
 }
 
@@ -94,7 +88,6 @@ const setFilter = (newFilter = Filters.All) => {
 const getCurrentFilter = () => {
 
     return state.filter
-    throw new Error("No Implementado")
 }
 
 export default {
